@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  KnownSpys
-//
-//  Created by Sajith Konara on 3/26/20.
-//  Copyright © 2020 Sajith Konara. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
