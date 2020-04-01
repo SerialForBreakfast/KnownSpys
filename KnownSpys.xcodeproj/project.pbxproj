@@ -28,6 +28,8 @@
 		3DA45E33242C9D1E00448067 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA45E31242C9D1E00448067 /* Extensions.swift */; };
 		3DA45E34242C9D1E00448067 /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA45E32242C9D1E00448067 /* RowType.swift */; };
 		446DFE782435449400D208CA /* SpyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE772435449400D208CA /* SpyListPresenter.swift */; };
+		446DFE7A2435532A00D208CA /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE792435532A00D208CA /* DetailPresenter.swift */; };
+		446DFE7C243554B900D208CA /* SecretDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE7B243554B900D208CA /* SecretDetailsPresenter.swift */; };
 		BB9DD30F8DF236D9ED2C0C9C /* Pods_KnownSpys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A585D40DF53C6A69DAF7BD4 /* Pods_KnownSpys.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		3DA45E31242C9D1E00448067 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3DA45E32242C9D1E00448067 /* RowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowType.swift; sourceTree = "<group>"; };
 		446DFE772435449400D208CA /* SpyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyListPresenter.swift; sourceTree = "<group>"; };
+		446DFE792435532A00D208CA /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		446DFE7B243554B900D208CA /* SecretDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDetailsPresenter.swift; sourceTree = "<group>"; };
 		B359C5331160B5C929C8FA5F /* Pods-KnownSpys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnownSpys.release.xcconfig"; path = "Target Support Files/Pods-KnownSpys/Pods-KnownSpys.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA45E2D242C9CE400448067 /* DetailViewController.swift */,
+				446DFE792435532A00D208CA /* DetailPresenter.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA45E2A242C9CD600448067 /* SecretDetailsViewController.swift */,
+				446DFE7B243554B900D208CA /* SecretDetailsPresenter.swift */,
 				3DA45E29242C9CD600448067 /* SecretDetailsViewController.xib */,
 			);
 			path = SecretDetails;
@@ -361,6 +367,7 @@
 				446DFE782435449400D208CA /* SpyListPresenter.swift in Sources */,
 				3DA45E2E242C9CE400448067 /* DetailViewController.swift in Sources */,
 				3DA45E30242C9CF300448067 /* SpyListViewController.swift in Sources */,
+				446DFE7C243554B900D208CA /* SecretDetailsPresenter.swift in Sources */,
 				3DA45E14242C998000448067 /* KnownSpys.xcdatamodeld in Sources */,
 				3DA45E2C242C9CD600448067 /* SecretDetailsViewController.swift in Sources */,
 				3DA45E34242C9D1E00448067 /* RowType.swift in Sources */,
@@ -369,6 +376,7 @@
 				3DA45E1A242C9BC100448067 /* MockedWebServer.swift in Sources */,
 				3DA45E03242C971300448067 /* Enums.swift in Sources */,
 				3DA45E33242C9D1E00448067 /* Extensions.swift in Sources */,
+				446DFE7A2435532A00D208CA /* DetailPresenter.swift in Sources */,
 				3DA45E12242C998000448067 /* Spy+CoreDataClass.swift in Sources */,
 				3DA45E27242C9CC300448067 /* SpyCell.swift in Sources */,
 				3DA45E13242C998000448067 /* Spy+CoreDataProperties.swift in Sources */,

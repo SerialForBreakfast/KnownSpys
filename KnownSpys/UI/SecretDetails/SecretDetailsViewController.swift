@@ -8,12 +8,12 @@ class SecretDetailsViewController: UIViewController {
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var passwordLabel: UILabel!
+    fileprivate var presenter: SecretDetailsPresenter
     
-    var spy: Spy
     weak var delegate: SecretDetailsDelegate?
     
-    init(with spy: Spy, and delegate: SecretDetailsDelegate?) {
-        self.spy = spy
+    init(with presenter: SecretDetailsPresenter, and delegate: SecretDetailsDelegate?) {
+        self.presenter = presenter
         self.delegate = delegate
         
         super.init(nibName: "SecretDetailsViewController", bundle: nil)
@@ -38,7 +38,7 @@ class SecretDetailsViewController: UIViewController {
     func showPassword() {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
-        passwordLabel.text = spy.password
+        passwordLabel.text = presenter.password
     }
     
     @IBAction func finishedButtonTapped(_ button: UIButton) {

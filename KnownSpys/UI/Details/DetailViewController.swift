@@ -1,17 +1,5 @@
 import UIKit
 
-class DetailPresenter {
-    
-    var spy: Spy!
-    var imageName: String { return spy.imageName}
-    var name: String { return spy.name}
-    var age: String { return String(spy.age) }
-    var gender: String { return spy.gender }
-    init(with spy: Spy) {
-        self.spy = spy
-    }
-}
-
 class DetailViewController: UIViewController, SecretDetailsDelegate {
     
     
@@ -41,7 +29,8 @@ class DetailViewController: UIViewController, SecretDetailsDelegate {
 //MARK: - Touch Events
 extension DetailViewController {
     @IBAction func briefcaseTapped(_ button: UIButton) {
-        let vc = SecretDetailsViewController(with: presenter.spy, and: self as SecretDetailsDelegate)
+        let secretDetailsPresenter = SecretDetailsPresenter(with: presenter.spy)
+        let vc = SecretDetailsViewController(with: secretDetailsPresenter, and: self as SecretDetailsDelegate)
         
         navigationController?.pushViewController(vc, animated: true)
     }
