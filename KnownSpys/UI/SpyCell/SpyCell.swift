@@ -1,6 +1,7 @@
 import UIKit
 import CoreData
 
+
 class SpyCell: UITableViewCell {
 
     @IBOutlet var nameLabel: UILabel!
@@ -10,11 +11,11 @@ class SpyCell: UITableViewCell {
     @IBOutlet var imageContainer: UIView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var spy: Spy!
-    
+    fileprivate var presenter: SpyCellPresenter!
+        
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         commonInit()
     }
     
@@ -45,14 +46,14 @@ extension SpyCell {
 
 //MARK: - Configure
 extension SpyCell {
-    func configure(with spy: Spy) {
+    func configure(with presenter: SpyCellPresenter) {
         
         getSomeData { [weak self] in
             guard let strongSelf = self else { return }
 
-            strongSelf.set(age: Int(spy.age))
-            strongSelf.set(name: spy.name)
-            strongSelf.add(imageName: spy.imageName)
+            strongSelf.set(age: Int(presenter.age))
+            strongSelf.set(name: presenter.name)
+            strongSelf.add(imageName: presenter.imageName)
         }
     }
     
@@ -149,8 +150,9 @@ extension SpyCell {
     }
     
     public static func dequeue(from tableView: UITableView, for indexPath: IndexPath, with spy: Spy) -> SpyCell {
+        let spyCellPresenter = SpyCellPresenter(with: spy)
         let cell = tableView.dequeueReusableCell(withIdentifier: SpyCell.cellId, for: indexPath) as! SpyCell
-            cell.configure(with: spy)
+            cell.configure(with: spyCellPresenter)
         return cell
     }
 }
