@@ -59,7 +59,8 @@ extension SpyListViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let spy = presenter.data[indexPath.row]
         
-        let detailViewController = DetailViewController.fromStoryboard(with: spy)
+        let detailPresenter = DetailPresenter(with: spy)
+        let detailViewController = DetailViewController.fromStoryboard(with: detailPresenter)
         
         navigationController?.pushViewController(detailViewController, animated: true)
     }
