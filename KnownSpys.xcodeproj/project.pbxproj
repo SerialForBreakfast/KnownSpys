@@ -27,6 +27,7 @@
 		3DA45E30242C9CF300448067 /* SpyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA45E2F242C9CF300448067 /* SpyListViewController.swift */; };
 		3DA45E33242C9D1E00448067 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA45E31242C9D1E00448067 /* Extensions.swift */; };
 		3DA45E34242C9D1E00448067 /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA45E32242C9D1E00448067 /* RowType.swift */; };
+		446DFE782435449400D208CA /* SpyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE772435449400D208CA /* SpyListPresenter.swift */; };
 		BB9DD30F8DF236D9ED2C0C9C /* Pods_KnownSpys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A585D40DF53C6A69DAF7BD4 /* Pods_KnownSpys.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		3DA45E2F242C9CF300448067 /* SpyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyListViewController.swift; sourceTree = "<group>"; };
 		3DA45E31242C9D1E00448067 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3DA45E32242C9D1E00448067 /* RowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowType.swift; sourceTree = "<group>"; };
+		446DFE772435449400D208CA /* SpyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyListPresenter.swift; sourceTree = "<group>"; };
 		B359C5331160B5C929C8FA5F /* Pods-KnownSpys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnownSpys.release.xcconfig"; path = "Target Support Files/Pods-KnownSpys/Pods-KnownSpys.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA45E2F242C9CF300448067 /* SpyListViewController.swift */,
+				446DFE772435449400D208CA /* SpyListPresenter.swift */,
 			);
 			path = SpyList;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446DFE782435449400D208CA /* SpyListPresenter.swift in Sources */,
 				3DA45E2E242C9CE400448067 /* DetailViewController.swift in Sources */,
 				3DA45E30242C9CF300448067 /* SpyListViewController.swift in Sources */,
 				3DA45E14242C998000448067 /* KnownSpys.xcdatamodeld in Sources */,
