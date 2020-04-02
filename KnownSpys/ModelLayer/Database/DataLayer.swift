@@ -11,6 +11,8 @@ import UIKit
 import CoreData
 
 
+typealias SpiesBlock = ([Spy])->Void
+
 class DataLayer {
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

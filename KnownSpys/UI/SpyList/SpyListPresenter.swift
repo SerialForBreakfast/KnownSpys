@@ -10,12 +10,10 @@ import Foundation
 
 typealias BlockWithSource = (Source)->Void
 typealias VoidBlock = ()->Void
-typealias SpiesAndSourceBlock = (Source, [Spy])->Void
-typealias SpiesBlock = ([Spy])->Void
 
 class SpyListPresenter {
     
-    var data = [Spy]()
+    var data = [SpyDTO]()
     var modelLayer = ModelLayer()
 }
 
