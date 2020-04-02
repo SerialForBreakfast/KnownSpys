@@ -31,6 +31,11 @@
 		446DFE7A2435532A00D208CA /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE792435532A00D208CA /* DetailPresenter.swift */; };
 		446DFE7C243554B900D208CA /* SecretDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE7B243554B900D208CA /* SecretDetailsPresenter.swift */; };
 		446DFE7E243556D400D208CA /* SpyCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE7D243556D400D208CA /* SpyCellPresenter.swift */; };
+		446DFE8124355C4800D208CA /* TranslationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8024355C4800D208CA /* TranslationLayer.swift */; };
+		446DFE8324355C6300D208CA /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8224355C6300D208CA /* DataLayer.swift */; };
+		446DFE8524355C7500D208CA /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8424355C7500D208CA /* NetworkLayer.swift */; };
+		446DFE8724355CAE00D208CA /* ModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8624355CAE00D208CA /* ModelLayer.swift */; };
+		44D8128024364719005813E3 /* SpyTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8127F24364719005813E3 /* SpyTranslator.swift */; };
 		BB9DD30F8DF236D9ED2C0C9C /* Pods_KnownSpys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A585D40DF53C6A69DAF7BD4 /* Pods_KnownSpys.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +68,11 @@
 		446DFE792435532A00D208CA /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		446DFE7B243554B900D208CA /* SecretDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDetailsPresenter.swift; sourceTree = "<group>"; };
 		446DFE7D243556D400D208CA /* SpyCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyCellPresenter.swift; sourceTree = "<group>"; };
+		446DFE8024355C4800D208CA /* TranslationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLayer.swift; sourceTree = "<group>"; };
+		446DFE8224355C6300D208CA /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
+		446DFE8424355C7500D208CA /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		446DFE8624355CAE00D208CA /* ModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayer.swift; sourceTree = "<group>"; };
+		44D8127F24364719005813E3 /* SpyTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyTranslator.swift; sourceTree = "<group>"; };
 		B359C5331160B5C929C8FA5F /* Pods-KnownSpys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnownSpys.release.xcconfig"; path = "Target Support Files/Pods-KnownSpys/Pods-KnownSpys.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +124,7 @@
 		3DA45DFE242C969600448067 /* ModelLayer */ = {
 			isa = PBXGroup;
 			children = (
+				446DFE8624355CAE00D208CA /* ModelLayer.swift */,
 				446DFE7F2435574300D208CA /* Translation */,
 				3DA45E16242C9B7400448067 /* Network */,
 				3DA45E07242C97B200448067 /* Database */,
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA45E08242C97C100448067 /* CoreData */,
+				446DFE8224355C6300D208CA /* DataLayer.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -182,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA45E1C242C9BC500448067 /* MockedWebServer */,
+				446DFE8424355C7500D208CA /* NetworkLayer.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -236,6 +249,8 @@
 		446DFE7F2435574300D208CA /* Translation */ = {
 			isa = PBXGroup;
 			children = (
+				446DFE8024355C4800D208CA /* TranslationLayer.swift */,
+				44D8127F24364719005813E3 /* SpyTranslator.swift */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -375,10 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446DFE8524355C7500D208CA /* NetworkLayer.swift in Sources */,
 				446DFE782435449400D208CA /* SpyListPresenter.swift in Sources */,
 				3DA45E2E242C9CE400448067 /* DetailViewController.swift in Sources */,
 				3DA45E30242C9CF300448067 /* SpyListViewController.swift in Sources */,
 				446DFE7C243554B900D208CA /* SecretDetailsPresenter.swift in Sources */,
+				446DFE8124355C4800D208CA /* TranslationLayer.swift in Sources */,
 				3DA45E14242C998000448067 /* KnownSpys.xcdatamodeld in Sources */,
 				3DA45E2C242C9CD600448067 /* SecretDetailsViewController.swift in Sources */,
 				3DA45E34242C9D1E00448067 /* RowType.swift in Sources */,
@@ -386,7 +403,10 @@
 				3DA45E06242C973400448067 /* SpyDTO.swift in Sources */,
 				3DA45E1A242C9BC100448067 /* MockedWebServer.swift in Sources */,
 				3DA45E03242C971300448067 /* Enums.swift in Sources */,
+				446DFE8324355C6300D208CA /* DataLayer.swift in Sources */,
 				3DA45E33242C9D1E00448067 /* Extensions.swift in Sources */,
+				446DFE8724355CAE00D208CA /* ModelLayer.swift in Sources */,
+				44D8128024364719005813E3 /* SpyTranslator.swift in Sources */,
 				446DFE7A2435532A00D208CA /* DetailPresenter.swift in Sources */,
 				446DFE7E243556D400D208CA /* SpyCellPresenter.swift in Sources */,
 				3DA45E12242C998000448067 /* Spy+CoreDataClass.swift in Sources */,
