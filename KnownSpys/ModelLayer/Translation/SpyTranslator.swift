@@ -11,7 +11,6 @@ import CoreData
 
 //MARK: - Spy Translation Methods
 class SpyTranslator {
-    
     func translate(from spy: Spy?) -> SpyDTO? {
         guard let spy = spy else { return nil }
         

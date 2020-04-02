@@ -13,7 +13,6 @@ struct SpyDTO {
 }
 
 extension SpyDTO: Deserializable {
-    
     init(object: Outlaw.Extractable) throws {
         let genderString: String = try object.value(for: "gender")
         

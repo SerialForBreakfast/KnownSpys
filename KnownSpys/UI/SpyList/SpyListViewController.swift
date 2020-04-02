@@ -8,6 +8,7 @@ class SpyListViewController: UIViewController, UITableViewDataSource ,UITableVie
     @IBOutlet var tableView: UITableView!
     
     fileprivate var presenter: SpyListPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,9 +16,7 @@ class SpyListViewController: UIViewController, UITableViewDataSource ,UITableVie
         tableView.delegate   = self
         
         presenter = SpyListPresenter()
-        
         SpyCell.register(with: tableView)
-        
         presenter.loadData { [weak self] source in
             self?.newDataReceived(from: source)
         }
@@ -32,7 +31,6 @@ class SpyListViewController: UIViewController, UITableViewDataSource ,UITableVie
 
 //MARK: - UITableViewDataSource
 extension SpyListViewController {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -43,9 +41,7 @@ extension SpyListViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let spy = presenter.data[indexPath.row]
-        
         let cell = SpyCell.dequeue(from: tableView, for: indexPath, with: spy)
-        
         return cell
     }
 }
@@ -58,7 +54,6 @@ extension SpyListViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let spy = presenter.data[indexPath.row]
-        
         let detailPresenter = DetailPresenter(with: spy)
         let detailViewController = DetailViewController.fromStoryboard(with: detailPresenter)
         

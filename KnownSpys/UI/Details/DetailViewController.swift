@@ -2,7 +2,6 @@ import UIKit
 
 class DetailViewController: UIViewController, SecretDetailsDelegate {
     
-    
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!

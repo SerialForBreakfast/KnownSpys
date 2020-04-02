@@ -18,9 +18,7 @@ class ModelLayer {
     //MARK: - Model Methods
     func loadData(resultsLoaded: @escaping SpiesAndSourceBlock) {
         func mainWork() {
-            
             loadFromDB(from: .local)
-            
             networkLayer.loadFromServer { data in
                 let dtos = self.translationLayer.createSpyDTOsFromJsonData(data)
                 self.dataLayer.save(dtos: dtos, translationLayer: self.translationLayer) {
