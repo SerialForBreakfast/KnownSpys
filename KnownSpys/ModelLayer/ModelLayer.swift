@@ -11,9 +11,18 @@ import Foundation
 typealias SpiesAndSourceBlock = (Source, [SpyDTO])->Void
 
 class ModelLayer {
-    fileprivate var networkLayer = NetworkLayer()
-    fileprivate var dataLayer = DataLayer()
-    fileprivate var translationLayer = TranslationLayer()
+    fileprivate var networkLayer: NetworkLayer
+    fileprivate var dataLayer: DataLayer
+    fileprivate var translationLayer: TranslationLayer
+    
+    init(networkLayer: NetworkLayer,
+        dataLayer: DataLayer,
+    translationLayer: TranslationLayer) {
+        self.networkLayer = networkLayer
+        self.dataLayer = dataLayer
+        self.translationLayer = translationLayer
+        
+    }
     
     //MARK: - Model Methods
     func loadData(resultsLoaded: @escaping SpiesAndSourceBlock) {

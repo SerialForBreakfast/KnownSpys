@@ -36,6 +36,8 @@
 		446DFE8524355C7500D208CA /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8424355C7500D208CA /* NetworkLayer.swift */; };
 		446DFE8724355CAE00D208CA /* ModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8624355CAE00D208CA /* ModelLayer.swift */; };
 		44D8128024364719005813E3 /* SpyTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8127F24364719005813E3 /* SpyTranslator.swift */; };
+		44D8128424366CCB005813E3 /* SwinjectStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8128224366CCA005813E3 /* SwinjectStoryboard+Extensions.swift */; };
+		44D8128524366CCB005813E3 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8128324366CCA005813E3 /* DependencyRegistry.swift */; };
 		BB9DD30F8DF236D9ED2C0C9C /* Pods_KnownSpys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A585D40DF53C6A69DAF7BD4 /* Pods_KnownSpys.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		446DFE8424355C7500D208CA /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		446DFE8624355CAE00D208CA /* ModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayer.swift; sourceTree = "<group>"; };
 		44D8127F24364719005813E3 /* SpyTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyTranslator.swift; sourceTree = "<group>"; };
+		44D8128224366CCA005813E3 /* SwinjectStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extensions.swift"; sourceTree = "<group>"; };
+		44D8128324366CCA005813E3 /* DependencyRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		B359C5331160B5C929C8FA5F /* Pods-KnownSpys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnownSpys.release.xcconfig"; path = "Target Support Files/Pods-KnownSpys/Pods-KnownSpys.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,7 @@
 		3DA45DE6242C91CD00448067 /* KnownSpys */ = {
 			isa = PBXGroup;
 			children = (
+				44D8128124366CCA005813E3 /* Dependencies */,
 				3DA45DE7242C91CD00448067 /* AppDelegate.swift */,
 				3DA45DE9242C91CD00448067 /* SceneDelegate.swift */,
 				3DA45DF3242C91CE00448067 /* Assets.xcassets */,
@@ -255,6 +260,15 @@
 			path = Translation;
 			sourceTree = "<group>";
 		};
+		44D8128124366CCA005813E3 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				44D8128224366CCA005813E3 /* SwinjectStoryboard+Extensions.swift */,
+				44D8128324366CCA005813E3 /* DependencyRegistry.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		B704001F5498F14587CEE075 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,8 +413,10 @@
 				3DA45E14242C998000448067 /* KnownSpys.xcdatamodeld in Sources */,
 				3DA45E2C242C9CD600448067 /* SecretDetailsViewController.swift in Sources */,
 				3DA45E34242C9D1E00448067 /* RowType.swift in Sources */,
+				44D8128424366CCB005813E3 /* SwinjectStoryboard+Extensions.swift in Sources */,
 				3DA45DE8242C91CD00448067 /* AppDelegate.swift in Sources */,
 				3DA45E06242C973400448067 /* SpyDTO.swift in Sources */,
+				44D8128524366CCB005813E3 /* DependencyRegistry.swift in Sources */,
 				3DA45E1A242C9BC100448067 /* MockedWebServer.swift in Sources */,
 				3DA45E03242C971300448067 /* Enums.swift in Sources */,
 				446DFE8324355C6300D208CA /* DataLayer.swift in Sources */,
