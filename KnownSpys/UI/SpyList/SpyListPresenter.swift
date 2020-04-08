@@ -11,7 +11,12 @@ import Foundation
 typealias BlockWithSource = (Source)->Void
 typealias VoidBlock = ()->Void
 
-class SpyListPresenter {
+protocol SpyListPresenter {
+    var data: [SpyDTO] { get }
+    func loadData(finished: @escaping BlockWithSource)
+}
+
+class SpyListPresenterImplementation: SpyListPresenter {
     var data = [SpyDTO]()
     var modelLayer: ModelLayer
     
@@ -21,7 +26,7 @@ class SpyListPresenter {
 }
 
 //MARK: - Data Methods
-extension SpyListPresenter {
+extension SpyListPresenterImplementation {
     func loadData(finished: @escaping BlockWithSource) {
         modelLayer.loadData { [weak self] source, spies in
             self?.data = spies

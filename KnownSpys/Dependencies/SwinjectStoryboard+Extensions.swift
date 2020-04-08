@@ -8,7 +8,7 @@ import SwinjectStoryboard
 extension SwinjectStoryboard {
     public class func setup() {
         if AppDelegate.dependencyRegistry == nil {
-            AppDelegate.dependencyRegistry = DependencyRegistry(container: defaultContainer)
+            AppDelegate.dependencyRegistry = DependencyRegistryImplementation(container: defaultContainer)
         }
         
         let dependencyRegistry: DependencyRegistry = AppDelegate.dependencyRegistry

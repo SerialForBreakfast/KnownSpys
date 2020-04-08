@@ -8,7 +8,13 @@
 
 import Foundation
 
-class SpyCellPresenter {
+protocol SpyCellPresenter {
+    var age: Int { get }
+    var name: String { get }
+    var imageName: String { get }
+}
+
+class SpyCellPresenterImplementation: SpyCellPresenter {
     var spy: SpyDTO!
     var age: Int { return Int(spy.age) }
     var name: String { return spy.name }

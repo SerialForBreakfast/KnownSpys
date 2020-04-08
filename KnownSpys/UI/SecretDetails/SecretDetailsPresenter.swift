@@ -8,7 +8,11 @@
 
 import Foundation
 
-class SecretDetailsPresenter {
+protocol SecretDetailsPresenter {
+    var password: String { get }
+}
+
+class SecretDetailsPresenterImplementation: SecretDetailsPresenter {
     var spy: SpyDTO
     var password: String { return spy.password }
     

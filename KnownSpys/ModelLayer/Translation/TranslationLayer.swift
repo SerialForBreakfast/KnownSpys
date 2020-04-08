@@ -10,7 +10,13 @@ import Foundation
 import Outlaw
 import CoreData
 
-class TranslationLayer {
+protocol TranslationLayer {
+    func createSpyDTOsFromJsonData(_ data: Data) -> [SpyDTO]
+    func toUnsavedCoreData(from dtos: [SpyDTO], with context: NSManagedObjectContext) -> [Spy]
+    func toSpyDTOs(from spies:[Spy]) -> [SpyDTO]
+}
+
+class TranslationLayerImplementation: TranslationLayer {
     fileprivate var spyTranslator: SpyTranslator
     
     init(spyTranslator: SpyTranslator){
@@ -27,7 +33,7 @@ class TranslationLayer {
     
     func toUnsavedCoreData(from dtos: [SpyDTO], with context: NSManagedObjectContext) -> [Spy] {
         print("convering DTOs to Core Data Objects")
-        let spies = dtos.compactMap{ dto in spyTranslator.translate(from: dto, with: context) } // keeping it simple by keeping things single threaded
+        let spies = dtos.compactMap { dto in spyTranslator.translate(from: dto, with: context) } // keeping it simple by keeping things single threaded
         
         return spies
     }

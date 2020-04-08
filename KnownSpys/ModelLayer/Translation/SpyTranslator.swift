@@ -9,8 +9,13 @@
 import Foundation
 import CoreData
 
+protocol SpyTranslator {
+    func translate(from spy: Spy?) -> SpyDTO?
+    func translate(from dto: SpyDTO?, with context: NSManagedObjectContext) -> Spy?
+}
+
 //MARK: - Spy Translation Methods
-class SpyTranslator {
+class SpyTranslatorImplementation: SpyTranslator {
     func translate(from spy: Spy?) -> SpyDTO? {
         guard let spy = spy else { return nil }
         

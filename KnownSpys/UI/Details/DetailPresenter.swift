@@ -8,7 +8,16 @@
 
 import Foundation
 
-class DetailPresenter {
+protocol DetailPresenter {
+    var spy: SpyDTO! { get }
+    
+    var imageName: String { get }
+    var name: String { get }
+    var age: String { get }
+    var gender: String { get }
+}
+
+class DetailPresenterImplementation: DetailPresenter {
     var spy: SpyDTO!
     
     var imageName: String { return spy.imageName}

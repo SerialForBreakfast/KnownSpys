@@ -9,7 +9,11 @@
 import Foundation
 import Alamofire
 
-class NetworkLayer {
+protocol NetworkLayer {
+    func loadFromServer(finished: @escaping (Data) -> Void)
+}
+
+class NetworkLayerImplementation: NetworkLayer {
     //MARK: - Network Methods
     func loadFromServer(finished: @escaping (Data) -> Void) {
         print("loading data from server")
