@@ -1,20 +1,16 @@
 import UIKit
 
-protocol SecretDetailsDelegate: class {
-    func passwordCrackingFinished()
-}
-
 class SecretDetailsViewController: UIViewController {
 
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var passwordLabel: UILabel!
     fileprivate var presenter: SecretDetailsPresenter
     
-    weak var delegate: SecretDetailsDelegate?
+    fileprivate weak var navigationCoordinator: NavigationCoordinator?
     
-    init(with presenter: SecretDetailsPresenter, and delegate: SecretDetailsDelegate?) {
+    init(with presenter: SecretDetailsPresenter, navigationCoordinator: NavigationCoordinator?) {
         self.presenter = presenter
-        self.delegate = delegate
+        self.navigationCoordinator = navigationCoordinator
         
         super.init(nibName: "SecretDetailsViewController", bundle: nil)
     }
@@ -35,6 +31,14 @@ class SecretDetailsViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear (_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            navigationCoordinator?.movingBack()
+        }
+    }
+    
     func showPassword() {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
@@ -42,8 +46,7 @@ class SecretDetailsViewController: UIViewController {
     }
     
     @IBAction func finishedButtonTapped(_ button: UIButton) {
-        navigationController?.popViewController(animated: true)
-        
-        delegate?.passwordCrackingFinished()
+        navigationCoordinator?.next(arguments: [:])
+
     }
 }

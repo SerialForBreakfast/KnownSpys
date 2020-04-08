@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailViewController: UIViewController, SecretDetailsDelegate {
+class DetailViewController: UIViewController {
     
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -8,16 +8,24 @@ class DetailViewController: UIViewController, SecretDetailsDelegate {
     @IBOutlet var genderLabel: UILabel!
     
     fileprivate var presenter: DetailPresenter!
-    fileprivate var secretDetailsViewControllerMaker: DependencyRegistry.SecretDetailsViewControllerMaker!
+    fileprivate weak var navigationCoordinator: NavigationCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
-    func configure(with presenter: DetailPresenter, secretDetailsViewControllerMaker: @escaping DependencyRegistry.SecretDetailsViewControllerMaker) {
+    
+    override func viewWillDisappear (_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            navigationCoordinator?.movingBack()
+        }
+    }
+    
+    func configure(with presenter: DetailPresenter, navigationCoordinator: NavigationCoordinator) {
         self.presenter = presenter
-        self.secretDetailsViewControllerMaker = secretDetailsViewControllerMaker
+        self.navigationCoordinator = navigationCoordinator
     }
     
     func setupView() {
@@ -31,28 +39,8 @@ class DetailViewController: UIViewController, SecretDetailsDelegate {
 //MARK: - Touch Events
 extension DetailViewController {
     @IBAction func briefcaseTapped(_ button: UIButton) {
+        let args = ["spy": presenter.spy!]
+        navigationCoordinator?.next(arguments: args)
         
-        let vc = secretDetailsViewControllerMaker(presenter.spy, self)
-        
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-//MARK: - SecretDetailsDelegate
-extension DetailViewController {
-    func passwordCrackingFinished() {
-        //close middle layer too
-        navigationController?.popViewController(animated: true)
-    }
-}
-
-//MARK: - Helper Methods
-//extension DetailViewController {
-//    static func fromStoryboard(with presenter: DetailPresenter) -> DetailViewController {
-//        let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//            vc.configure(with: presenter)
-//        
-//        return vc
-//    }
-//}
-//

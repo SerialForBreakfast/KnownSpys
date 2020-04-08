@@ -35,6 +35,7 @@
 		446DFE8324355C6300D208CA /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8224355C6300D208CA /* DataLayer.swift */; };
 		446DFE8524355C7500D208CA /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8424355C7500D208CA /* NetworkLayer.swift */; };
 		446DFE8724355CAE00D208CA /* ModelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DFE8624355CAE00D208CA /* ModelLayer.swift */; };
+		4477435F243E8AF1000E2FE6 /* RootNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477435E243E8AF1000E2FE6 /* RootNavigationCoordinator.swift */; };
 		44D8128024364719005813E3 /* SpyTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8127F24364719005813E3 /* SpyTranslator.swift */; };
 		44D8128424366CCB005813E3 /* SwinjectStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8128224366CCA005813E3 /* SwinjectStoryboard+Extensions.swift */; };
 		44D8128524366CCB005813E3 /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8128324366CCA005813E3 /* DependencyRegistry.swift */; };
@@ -74,6 +75,7 @@
 		446DFE8224355C6300D208CA /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
 		446DFE8424355C7500D208CA /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		446DFE8624355CAE00D208CA /* ModelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLayer.swift; sourceTree = "<group>"; };
+		4477435E243E8AF1000E2FE6 /* RootNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationCoordinator.swift; sourceTree = "<group>"; };
 		44D8127F24364719005813E3 /* SpyTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyTranslator.swift; sourceTree = "<group>"; };
 		44D8128224366CCA005813E3 /* SwinjectStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		44D8128324366CCA005813E3 /* DependencyRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		3DA45DE6242C91CD00448067 /* KnownSpys */ = {
 			isa = PBXGroup;
 			children = (
+				4477435D243E794C000E2FE6 /* NavigationCoordinators */,
 				44D8128124366CCA005813E3 /* Dependencies */,
 				3DA45DE7242C91CD00448067 /* AppDelegate.swift */,
 				3DA45DE9242C91CD00448067 /* SceneDelegate.swift */,
@@ -258,6 +261,14 @@
 				44D8127F24364719005813E3 /* SpyTranslator.swift */,
 			);
 			path = Translation;
+			sourceTree = "<group>";
+		};
+		4477435D243E794C000E2FE6 /* NavigationCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4477435E243E8AF1000E2FE6 /* RootNavigationCoordinator.swift */,
+			);
+			path = NavigationCoordinators;
 			sourceTree = "<group>";
 		};
 		44D8128124366CCA005813E3 /* Dependencies */ = {
@@ -422,6 +433,7 @@
 				446DFE8324355C6300D208CA /* DataLayer.swift in Sources */,
 				3DA45E33242C9D1E00448067 /* Extensions.swift in Sources */,
 				446DFE8724355CAE00D208CA /* ModelLayer.swift in Sources */,
+				4477435F243E8AF1000E2FE6 /* RootNavigationCoordinator.swift in Sources */,
 				44D8128024364719005813E3 /* SpyTranslator.swift in Sources */,
 				446DFE7A2435532A00D208CA /* DetailPresenter.swift in Sources */,
 				446DFE7E243556D400D208CA /* SpyCellPresenter.swift in Sources */,

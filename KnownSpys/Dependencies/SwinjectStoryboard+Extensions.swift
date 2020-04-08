@@ -16,19 +16,22 @@ extension SwinjectStoryboard {
         func main() {
             dependencyRegistry.container.storyboardInitCompleted(SpyListViewController.self) { r, vc in
                 
-                setupData(resolver: r)
+                let coordinator = dependencyRegistry.makeRootNavigationCoordinator(rootViewController: vc)
+                
+                setupData(resolver: r, navigationCoordinator: coordinator)
                 
                 let presenter = r.resolve(SpyListPresenter.self)!
                 
                 //NOTE: We don't have access to the constructor for this VC so we are using method injection
                 vc.configure(with: presenter,
-        detailViewControllerMaker: dependencyRegistry.makeDetailViewController,
-                     spyCellMaker: dependencyRegistry.makeSpyCell)
+                             navigationCoordinator: coordinator,
+                             spyCellMaker: dependencyRegistry.makeSpyCell)
             }
         }
         
-        func setupData(resolver r: Resolver) {
+        func setupData(resolver r: Resolver, navigationCoordinator: NavigationCoordinator) {
             MockedWebServer.sharedInstance.start()
+            AppDelegate.navigationCoordinator = navigationCoordinator
         }
         
         main()
