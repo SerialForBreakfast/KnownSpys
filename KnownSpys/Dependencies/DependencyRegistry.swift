@@ -40,7 +40,7 @@ class DependencyRegistryImplementation: DependencyRegistry {
     func registerDependencies() {
         
         container.register(NavigationCoordinator.self) { (r, rootViewController: UIViewController) in
-            return RootNavigationCoordinatorImpl(with: rootViewController, registry: self)
+            return RootNavigationCoordinatorImplementation(with: rootViewController, registry: self)
         }.inObjectScope(.container)
 
         container.register(NetworkLayer.self    ) { _ in NetworkLayerImplementation()  }.inObjectScope(.container)

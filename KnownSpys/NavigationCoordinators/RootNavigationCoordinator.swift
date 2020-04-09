@@ -21,7 +21,7 @@ enum NavigationState {
          inSignupProcess
 }
 
-class RootNavigationCoordinatorImpl: NavigationCoordinator {
+class RootNavigationCoordinatorImplementation: NavigationCoordinator {
     
     var registry: DependencyRegistry
     var rootViewController: UIViewController
